@@ -1,0 +1,55 @@
+boolean move_right, move_left, move_down, move_up;
+float x, y;
+float speed = 1.3;
+
+void setup() {
+  size(800,800);
+}
+
+void draw() {
+  if(move_down) {
+    y+=speed;
+  }
+  if(move_up) {
+    y-=speed;
+  }
+  if(move_right) {
+    x+=speed;
+  }
+  if(move_left) {
+    x-=speed;
+  }
+  background(0);
+  fill(0,200,0);
+  rect(x,y,20,20);
+}
+
+void keyPressed() {
+  if(keyCode == RIGHT) {
+    move_right = true;
+  }
+  if(keyCode == LEFT) {
+    move_left = true;
+  }
+  if(keyCode == DOWN) {
+    move_down = true;
+  }
+  if(keyCode == UP) {
+    move_up = true;
+  }
+}
+
+void keyReleased() {
+  if(keyCode == RIGHT){
+    move_right = false;
+  }
+  if(keyCode == LEFT){
+    move_left = false;
+  }
+  if(keyCode == DOWN){
+    move_down = false;
+  }
+  if(keyCode == UP){
+    move_up = false;
+  }
+}
